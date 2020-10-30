@@ -1,0 +1,24 @@
+### 쿠폰 조회
+GET {{serverUrl}}/coupons
+
+### 쿠폰 조회 - Only Object response
+GET {{serverUrl}}/coupons/simple
+
+### 쿠폰 개수 조회
+GET {{serverUrl}}/coupons/count
+
+### 쿠폰 생성
+POST {{serverUrl}}/coupons
+Content-Type: application/json
+
+{
+  "couponName": "Sample Coupon"
+}
+
+### 쿠폰 생성 by Kafka
+POST {{serverUrl}}/coupons/kafka
+Content-Type: application/json
+
+{
+  "couponName": "Sample Coupon"
+}
