@@ -1,13 +1,16 @@
 package com.example.kafkastudy.application.controller;
 
-import com.example.kafkastudy.application.request.CouponCreateRequest;
+import com.example.kafkastudy.application.request.coupon.CouponCreateRequest;
+import com.example.kafkastudy.application.request.issue.CouponIssueCancelRequest;
 import com.example.kafkastudy.application.response.CommonResponse;
 import com.example.kafkastudy.application.service.CouponService;
 import com.example.kafkastudy.domain.coupon.entity.Coupon;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +32,11 @@ public class CouponController {
   @PostMapping("/kafka")
   public CommonResponse createCouponByKafka(@RequestBody CouponCreateRequest request) {
     return new CommonResponse(couponService.sendTopicForCreateCoupon(request));
+  }
+
+  @DeleteMapping("/kafka/{couponId}")
+  public CommonResponse cancelCouponIssuedByKafka(@PathVariable(value = "couponId") Long couponId) {
+    return new CommonResponse(couponService.sendTopicForCancelCouponIssues(couponId));
   }
 
   @GetMapping("")

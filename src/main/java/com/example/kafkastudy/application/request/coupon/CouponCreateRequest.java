@@ -1,4 +1,4 @@
-package com.example.kafkastudy.application.request;
+package com.example.kafkastudy.application.request.coupon;
 
 import com.example.kafkastudy.domain.coupon.entity.Coupon;
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class CouponCreateRequest implements Serializable {
 
-  private static final long serialVersionUID = 7848522162103372808L;
+  private static final long serialVersionUID = 1L;
   
   private String couponName;
 

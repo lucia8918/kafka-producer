@@ -22,3 +22,6 @@ Content-Type: application/json
 {
   "couponName": "Sample Coupon"
 }
+
+### 쿠폰 회수 by Kafka
+DELETE {{serverUrl}}/coupons/kafka/5

@@ -1,0 +1,6 @@
+### 대시보드 summary 조회
+GET {{serverUrl}}/dashboards/summary
+
+### users 조회
+GET {{serverUrl}}/dashboards/users
+
